@@ -26,7 +26,7 @@ class CoreTests(unittest.TestCase):
         env = {"LOCALAPPDATA": r"C:\Users\Test User\AppData\Local", "APPDATA": r"C:\Users\Test User\AppData\Roaming"}
         paths = core.candidate_token_files("win32", env, Path(r"C:\Users\Test User"))
         self.assertTrue(str(paths[0]).startswith(env["LOCALAPPDATA"]))
-        self.assertTrue(any("Auth" in str(path) for path in paths))
+        self.assertTrue(any(path.parent.name.lower() == "auth" for path in paths))
         self.assertTrue(any(str(path).startswith(env["APPDATA"]) for path in paths))
 
     def test_macos_token_load_and_dry_data(self):

@@ -24,6 +24,15 @@ CHECKIN_API = "https://copilot.tencent.com/v2/billing/meter/daily-checkin"
 KNOWN_OK_MESSAGES = ("今天已签到", "请明天再来", "请求处理中", "请勿重复操作")
 
 
+def configure_utf8_console() -> None:
+    """Keep Chinese status output safe on legacy Windows console encodings."""
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, OSError):
+            pass
+
+
 def platform_key(value: Optional[str] = None) -> str:
     value = value or sys.platform
     if value.startswith("win"):
@@ -229,6 +238,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Optional[list[str]] = None) -> int:
+    configure_utf8_console()
     args = build_parser().parse_args(argv)
     candidates = [args.token_file.expanduser()] if args.token_file else candidate_token_files()
     try:

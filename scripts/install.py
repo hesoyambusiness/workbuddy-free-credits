@@ -23,6 +23,15 @@ LEGACY_WINDOWS_TASKS = ("WorkBuddyCheckin", "WorkBuddy每日签到")
 SCRIPT_NAME = "workbuddy_checkin.py"
 
 
+def configure_utf8_console() -> None:
+    """Keep Chinese status output safe on legacy Windows console encodings."""
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, OSError):
+            pass
+
+
 def parse_time(value: str) -> tuple[int, int]:
     match = re.fullmatch(r"([01]?\d|2[0-3]):([0-5]\d)", value.strip())
     if not match:
@@ -315,6 +324,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Optional[list[str]] = None) -> int:
+    configure_utf8_console()
     args = build_parser().parse_args(argv)
     try:
         platform = detect_platform(args.platform)
