@@ -4,16 +4,18 @@
 
 ## 安装方法：复制下面这段话发给 WorkBuddy
 
-请完整复制下面这段话，发送给 WorkBuddy：
+分享给别人时，只需要发送根目录里的 `使用说明-复制给WorkBuddy.txt`，不需要把整个源码文件夹交给对方。使用者打开说明文件，完整复制下面这段话给 WorkBuddy 即可：
 
 ```text
-请打开并下载这个免费开源项目：
+请访问并下载这个公开、免费的开源项目：
 https://github.com/liubinne/workbuddy-free-credits
 
-请完整阅读项目中的 README.md 和 SKILL.md，然后在我当前这台电脑上安装“WorkBuddy 全自动免费领积分”。只操作我当前登录的账号，默认每天 06:05 自动领取；先做 dry-run，检查并备份旧签到任务，再安装并立即验证。不要显示、复制或上传我的 Token。
+请先完整阅读仓库中的 README.md 和 SKILL.md，再在我当前这台电脑上安装“WorkBuddy 全自动免费领积分”。只操作我当前登录的 WorkBuddy 账号，默认每天 06:05 自动领取积分。请先执行 dry-run，检查并备份旧签到任务，再安装并立即验证。不要在聊天、命令输出或日志中显示、复制、上传我的 Token、Cookie 或登录文件内容。
+
+如果当前无法访问或下载 GitHub，请明确告诉我，不要猜测代码，也不要让我手工复制 Token。
 ```
 
-WorkBuddy 会自动识别 macOS 或 Windows，下载文件、检查登录状态、安装定时任务并验证结果。如果它无法直接下载 GitHub 项目，就先下载本仓库 ZIP，解压后把整个文件夹交给 WorkBuddy，再发送同一段话。
+WorkBuddy 会自动识别 macOS 或 Windows，下载仓库、检查登录状态、安装定时任务并验证结果。
 
 ## 备用方法：双击安装
 
