@@ -1,19 +1,21 @@
-# WorkBuddy Auto Check-in
+# WorkBuddy 全自动免费领积分
 
-一个无遥测、零第三方 Python 依赖的 WorkBuddy 每日自动签到分享包。每位用户只使用自己电脑上已有的 WorkBuddy 登录状态；工具不收集、不上传、不保存账号凭证。
+免费开源、免费分享，每天自动领取自己 WorkBuddy 账号的签到积分。每位用户只操作自己电脑上当前登录的账号；工具不收集、不上传、不保存账号凭证。
 
-## 最简单的使用方式
+## 安装方法：复制下面这段话发给 WorkBuddy
 
-把整个文件夹或 GitHub 仓库链接交给 AI，然后说：
+请完整复制下面这段话，发送给 WorkBuddy：
 
 ```text
-请先阅读 SKILL.md，帮我在这台电脑安装 WorkBuddy 每日自动签到。
-每天 06:05 执行；先检查重复任务，安装后立即验证，不要显示或复制我的 Token。
+请打开并下载这个免费开源项目：
+https://github.com/liubinne/workbuddy-free-credits
+
+请完整阅读项目中的 README.md 和 SKILL.md，然后在我当前这台电脑上安装“WorkBuddy 全自动免费领积分”。只操作我当前登录的账号，默认每天 06:05 自动领取；先做 dry-run，检查并备份旧签到任务，再安装并立即验证。不要显示、复制或上传我的 Token。
 ```
 
-AI 会识别 macOS 或 Windows，检查登录状态，安装一套定时任务并验证结果。
+WorkBuddy 会自动识别 macOS 或 Windows，下载文件、检查登录状态、安装定时任务并验证结果。如果它无法直接下载 GitHub 项目，就先下载本仓库 ZIP，解压后把整个文件夹交给 WorkBuddy，再发送同一段话。
 
-## 双击安装
+## 备用方法：双击安装
 
 - macOS：双击 `install-macos.command`。
 - Windows：双击 `install-windows.cmd`。

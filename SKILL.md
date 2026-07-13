@@ -3,7 +3,7 @@ name: workbuddy-auto-checkin
 description: Install, verify, repair, configure, or uninstall one daily WorkBuddy check-in task on macOS or Windows. Use when a user gives an AI this folder or repository and asks to set up WorkBuddy automatic daily credit check-in, change its time, diagnose duplicate check-in jobs, test token discovery without exposing credentials, or remove the automation.
 ---
 
-# WorkBuddy Auto Check-in
+# WorkBuddy 全自动免费领积分
 
 Operate only on the current user's computer and account. Never display, copy, upload, or persist an access token outside WorkBuddy's own auth file.
 
