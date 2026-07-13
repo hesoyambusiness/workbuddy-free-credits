@@ -22,3 +22,14 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Core syntax check
         run: python -m py_compile scripts/workbuddy_checkin.py scripts/install.py
+      - name: Windows scheduled-task install and uninstall
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          python scripts/install.py --time 23:57
+          schtasks.exe /Query /TN "WorkBuddyAutoCheckin" /V /FO LIST
+          if ($LASTEXITCODE -ne 0) { throw "Scheduled task was not registered" }
+          python scripts/install.py --uninstall
+          schtasks.exe /Query /TN "WorkBuddyAutoCheckin" *> $null
+          if ($LASTEXITCODE -eq 0) { throw "Scheduled task still exists after uninstall" }
+          exit 0
