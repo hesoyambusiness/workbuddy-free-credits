@@ -34,7 +34,7 @@ Windows 可用 `py -3` 替换 `python3`。
 
 ## 隐私
 
-- 仓库不包含姓名、微信、邮箱、账号、Token、Cookie 或个人绝对路径。
+- 除本文末尾主动公开的作者名和微信号外，仓库不包含邮箱、账号、Token、Cookie、个人绝对路径或其他个人信息。
 - Token 只在签到进程内存中短暂使用，不写入本工具目录和日志。
 - 日志只记录时间和脱敏后的成功/失败结果。
 - 不要向任何人发送 `workbuddy-desktop.info`。
@@ -60,3 +60,5 @@ python3 scripts/install.py --uninstall
 ## License
 
 MIT。详见 `LICENSE`。
+
+作者：鹿游｜微信号：Agent2603
