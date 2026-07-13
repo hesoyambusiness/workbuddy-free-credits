@@ -154,7 +154,8 @@ def build_windows_task_xml(
     arguments = f'"{script}" --log-file "{log}"'
     element(execute, "Arguments", arguments)
     element(execute, "WorkingDirectory", str(script.parent))
-    return ET.tostring(task, encoding="unicode", xml_declaration=True)
+    body = ET.tostring(task, encoding="unicode")
+    return '<?xml version="1.0" encoding="UTF-16"?>\n' + body
 
 
 def run(command: list[str], check: bool = True, capture: bool = False) -> subprocess.CompletedProcess:
@@ -271,7 +272,9 @@ def install_windows(args, home: Path, source: Path) -> None:
     for key in ("install_dir", "log_dir"):
         ensure_private_dir(paths[key])
     shutil.copy2(source, paths["script"])
-    paths["task_xml"].write_text(xml, encoding="utf-8")
+    # Task Scheduler expects its XML import in Windows "Unicode" format.
+    # Python's utf-16 codec includes the required byte-order mark.
+    paths["task_xml"].write_text(xml, encoding="utf-16")
 
     if args.replace_legacy:
         found = backup_windows_legacy(paths, False)
