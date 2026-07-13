@@ -1,0 +1,4 @@
+interface:
+  display_name: "WorkBuddy 全自动免费领积分"
+  short_description: "免费安装并维护 WorkBuddy 每日自动领积分"
+  default_prompt: "Use $workbuddy-auto-checkin to install and verify daily WorkBuddy check-in on this computer."

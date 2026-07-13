@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+*.log
+workbuddy-desktop.info
+*.token
+*.secret
+.env
+dist/
+build/
